@@ -1,3 +1,7 @@
+using System.Diagnostics;
+using AwsPractice.AspireApp.ApiService.Extensions;
+using Microsoft.AspNetCore.Http.Features;
+using Microsoft.AspNetCore.Http.HttpResults;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,7 +10,23 @@ var builder = WebApplication.CreateBuilder(args);
 builder.AddServiceDefaults();
 
 // Add services to the container.
-builder.Services.AddProblemDetails();
+builder.Services.AddProblemDetails(o =>
+{
+    o.CustomizeProblemDetails = (context) =>
+    {
+        context.ProblemDetails.Instance = $"{context.HttpContext.Request.Method} {context.HttpContext.Request.Path}";
+        if (!context.ProblemDetails.Extensions.ContainsKey("requestId"))
+        {
+            context.ProblemDetails.Extensions.Add("requestId", context.HttpContext.TraceIdentifier);
+        }
+        if (!context.ProblemDetails.Extensions.ContainsKey("traceId"))
+        {
+            Activity? activity = context.HttpContext.Features.Get<IHttpActivityFeature>()?.Activity;
+            context.ProblemDetails.Extensions.Add("traceId", activity?.Id);
+        }
+    };
+});
+builder.Services.AddExceptionHandler<GlobalExceptionHandler>();
 
 // Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
 builder.Services.AddOpenApi();
@@ -42,7 +62,8 @@ app.MapGet("/weatherforecast", () =>
 .WithName("GetWeatherForecast");
 
 app.MapDefaultEndpoints();
-
+app.UseExceptionHandler();
+app.UseStatusCodePages();
 app.Run();
 
 record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
