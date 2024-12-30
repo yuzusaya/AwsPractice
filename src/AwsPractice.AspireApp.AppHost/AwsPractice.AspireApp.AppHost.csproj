@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Sdk Name="Aspire.AppHost.Sdk" Version="9.0.0" />
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net9.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <IsAspireHost>true</IsAspireHost>
+    <UserSecretsId>01d238b9-25a4-434c-8f69-2e4c0eace7be</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AwsPractice.AspireApp.ApiService\AwsPractice.AspireApp.ApiService.csproj" />
+    <ProjectReference Include="..\AwsPractice.AspireApp.Web\AwsPractice.AspireApp.Web.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Aspire.Hosting.AppHost" Version="9.0.0" />
+    <PackageReference Include="Aspire.Hosting.Redis" Version="9.0.0" />
+  </ItemGroup>
+
+</Project>

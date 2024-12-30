@@ -1,0 +1,42 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.13.35617.110 d17.13
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsPractice.AspireApp.AppHost", "AwsPractice.AspireApp.AppHost\AwsPractice.AspireApp.AppHost.csproj", "{3B8108BE-98DA-4CAD-9A23-BF72F8631A83}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsPractice.AspireApp.ServiceDefaults", "AwsPractice.AspireApp.ServiceDefaults\AwsPractice.AspireApp.ServiceDefaults.csproj", "{3D92CD0F-EE6B-FF90-0C3E-645B926AFCCE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsPractice.AspireApp.ApiService", "AwsPractice.AspireApp.ApiService\AwsPractice.AspireApp.ApiService.csproj", "{79336D3F-21C0-F8D3-B65C-713F62F4C79E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AwsPractice.AspireApp.Web", "AwsPractice.AspireApp.Web\AwsPractice.AspireApp.Web.csproj", "{A4970E64-2EB3-3670-BD58-E59455CBDD89}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3B8108BE-98DA-4CAD-9A23-BF72F8631A83}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B8108BE-98DA-4CAD-9A23-BF72F8631A83}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B8108BE-98DA-4CAD-9A23-BF72F8631A83}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B8108BE-98DA-4CAD-9A23-BF72F8631A83}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D92CD0F-EE6B-FF90-0C3E-645B926AFCCE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D92CD0F-EE6B-FF90-0C3E-645B926AFCCE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D92CD0F-EE6B-FF90-0C3E-645B926AFCCE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D92CD0F-EE6B-FF90-0C3E-645B926AFCCE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79336D3F-21C0-F8D3-B65C-713F62F4C79E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79336D3F-21C0-F8D3-B65C-713F62F4C79E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79336D3F-21C0-F8D3-B65C-713F62F4C79E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79336D3F-21C0-F8D3-B65C-713F62F4C79E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A4970E64-2EB3-3670-BD58-E59455CBDD89}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A4970E64-2EB3-3670-BD58-E59455CBDD89}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A4970E64-2EB3-3670-BD58-E59455CBDD89}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A4970E64-2EB3-3670-BD58-E59455CBDD89}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7DEA877B-276F-47D0-B8A2-02E9485C7EEC}
+	EndGlobalSection
+EndGlobal
