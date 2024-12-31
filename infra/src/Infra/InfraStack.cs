@@ -41,14 +41,29 @@ namespace Infra
                 {
                     { "TABLE_NAME", table.TableName }
                 },
-                Timeout = Duration.Seconds(30)
+                Timeout = Duration.Seconds(5 * 60)
             });
+            // Grant Lambda function read access to objects in the "img/" folder of the S3 bucket
+            bucket.GrantRead(lambdaFunction, "img/*");
+
+            // Grant Lambda function write access to objects in the "img/" folder of the S3 bucket
+            bucket.GrantPut(lambdaFunction, "img/*");
 
             // Grant Lambda permissions to write to DynamoDB
             table.GrantWriteData(lambdaFunction);
 
             // S3 Trigger for Lambda
-            bucket.AddEventNotification(EventType.OBJECT_CREATED, new LambdaDestination(lambdaFunction));
+            var imgExtensions = new[] { ".jpg", ".jpeg", ".png", ".gif" };
+            foreach (var ext in imgExtensions)
+            {
+                bucket.AddEventNotification(EventType.OBJECT_CREATED,
+                    new LambdaDestination(lambdaFunction),
+                    new NotificationKeyFilter
+                    {
+                        Prefix = "img/",
+                        Suffix = ext
+                    });
+            }
         }
     }
 }

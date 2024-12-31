@@ -5,16 +5,13 @@
         <Nullable>enable</Nullable>
     </PropertyGroup>
     <ItemGroup>
-        <PackageReference Include="Amazon.Lambda.Core"
-                          Version="2.5.0" />
-        <PackageReference Include="Amazon.Lambda.S3Events"
-                          Version="3.1.0" />
-        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson"
-                          Version="2.4.4" />
-        <PackageReference Include="AWSSDK.DynamoDBv2"
-                          Version="3.7.404.11" />
-        <PackageReference Include="System.Text.Json"
-                          Version="9.0.0" />
+        <PackageReference Include="Amazon.Lambda.Core" Version="2.5.0" />
+        <PackageReference Include="Amazon.Lambda.S3Events" Version="3.1.0" />
+        <PackageReference Include="Amazon.Lambda.Serialization.SystemTextJson" Version="2.4.4" />
+        <PackageReference Include="AWSSDK.DynamoDBv2" Version="3.7.404.11" />
+        <PackageReference Include="AWSSDK.S3" Version="3.7.410.12" />
+        <PackageReference Include="SixLabors.ImageSharp" Version="3.1.6" />
+        <PackageReference Include="System.Text.Json" Version="9.0.0" />
     </ItemGroup>
 
     <!-- This is required-->
